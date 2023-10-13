@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>{% block title %} {% endblock title %}</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        {% load static %}
+        <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+   <div class="container">
+       <a class="navbar-brand" href="/Postnews/">Skill Factory</a>
+       <button class="navbar-toggler" type="button" data-toggle="collapse"
+               data-target="#navbarResponsive"
+               aria-controls="navbarResponsive" aria-expanded="false"
+               aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse" id="navbarResponsive">
+           <ul class="navbar-nav ml-auto">
+               <li class="nav-item active">
+                   <a class="nav-link" href="/admin/">Админ
+                       <span class="sr-only">(current)</span>
+                   </a>
+               </li>
+
+               <li class="nav-item">
+                   <a class="nav-link" href="/Postnews/news/create/">Создать Нововсть</a>
+               </li>
+               <li class="nav-item">
+                   <a class="nav-link" href="/Postnews/articles/create/">Создать Статью</a>
+               </li>
+              <!--<li class="nav-item">
+                   <a class="nav-link" href="/reg/">Приватная страница</a>
+               </li> -->
+               <li class="nav-item">
+                   <a class="nav-link" href="/Postnews/">Учебные статьи</a>
+               </li>
+               <li class="nav-item">
+                   <a class="nav-link" href="/Postnews/search/">Поиск статей</a>
+               </li>
+               <li class="nav-item">
+                   <a class="nav-link" href="/accounts/login/">Sign In</a>
+               </li>
+               <li class="nav-item">
+                   <a class="nav-link" href="/accounts/signup/">Sign Up</a>
+               </li>
+               <li class="nav-item">
+                   <a class="nav-link" href="/accounts/logout/">Sign Out</a>
+               </li>
+               <li class="nav-item">
+                   <a class="nav-link" href="/subscriptions/">Подписки</a>
+               </li>
+           </ul>
+       </div>
+   </div>
+</nav>
+        <!-- Page content-->
+        <div class="container">
+            <div class="text">
+                <br>
+                <br>
+                {% block content %}
+                {% endblock content %}
+            </div>
+        </div>
+    </body>
+
+</html>

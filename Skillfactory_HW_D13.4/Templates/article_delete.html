@@ -1,0 +1,15 @@
+{% extends 'flatpages/default.html' %}
+
+{% block title %}
+Удалить статью
+{% endblock title %}
+
+
+{% block content %}
+  <h1>Удалить статью</h1>
+  <p>Вы уверены что хотите удалить статью?</p>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Удалить</button>
+  </form>
+{% endblock %}

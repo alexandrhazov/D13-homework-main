@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Новые статьи на портале</title>
+</head>
+<body>
+    <h2>Новая публикация</h2>
+    {% for article in articles %}
+        <p>Заголовок поста - {{ article.text }} ! читать подробнее <a href="{{ article.link }}">тут</a></p>
+    {% endfor %}
+</body>
+</html>

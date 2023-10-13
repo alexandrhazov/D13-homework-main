@@ -1,0 +1,32 @@
+{% extends 'flatpages/default.html' %}
+
+{% block title %}
+Subscriptions
+{% endblock title %}
+
+{% block content %}
+<h2>Подпишитесь на любимые категории постов</h2>
+<hr>
+{% for category in categories_with %}
+    <p>
+        <h4>Категория {{ category.name }}</h4>
+        Последний пост: ({{ category.category_type }}) {{ category.latest_post_title }}... | Создал пост - {{ category.author_name }}
+        <br>
+
+        <br>
+        <form method="post">
+            {% csrf_token %}
+            <input type="hidden" name="category_id" value="{{ category.id }}" />
+
+            {% if category.user_subscribed %}
+                <button disabled>Подписаться</button>
+                <button name="action" value="unsubscribe">Отписаться</button>
+            {% else %}
+                <button name="action" value="subscribe">Подписаться</button>
+                <button disabled>Отписаться</button>
+            {% endif %}
+        </form>
+    <hr>
+    </p>
+{% endfor %}
+{% endblock content %}

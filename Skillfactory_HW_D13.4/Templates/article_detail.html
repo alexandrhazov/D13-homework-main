@@ -1,0 +1,17 @@
+<!--  наследуемся от шаблона default.html, который мы создавали для flatpages -->
+{% extends 'flatpages/default.html' %}
+
+{% load custom_filters %}
+
+{% block title %}
+{% endblock title %}
+
+<!-- В контенте на странице мы выводим подробные статьи, идентификатор которого был передан в url -->
+{% block content %}
+  <h1>{{ post.title|censor }}</h1>
+  <p>Дата публикации: {{ post.dateCreation|date:"d.m.Y" }}</p>
+  <p>{{ post.text|censor }}</p>
+<a href="{% url 'news_list' %}">Назад</a>
+<a href="{% url 'article_edit' post.pk %}">Редактировать</a>
+<a href="{% url 'article_delete' post.pk %}">Удалить</a>
+{% endblock %}
